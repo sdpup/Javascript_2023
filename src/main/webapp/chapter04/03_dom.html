@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Document</title>
+	<script>
+		function changeClass(){
+			var newParagraph = document.createElement('p');
+			newParagraph.textContent = "This id a new Paragraph";
+			var myDiv = document.getElementById("myDiv");
+			myDiv.appendChild(newParagraph);
+		}
+	</script>
+</head>
+<body>
+	<h1 id="myDiv"></h1>
+	<button onclick="addElement()">Add Element</button>
+</body>
+</html>

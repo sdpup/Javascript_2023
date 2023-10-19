@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Soldesk Car</title>
+</head>
+<body>
+<p id="car"></p>
+	
+    <p>[Car1 속성]</p>
+    <p id="car0"></p>
+    <p>[Car2 속성]</p>
+    <p id="car1"></p>
+    <p>[Car3 속성]</p>
+    <p id="car2"></p>
+
+<script>
+	
+	var car = new Array(['Sonata', 'blue', 100],
+						['Jeep', 'red', 70],
+						['Audi', 'white', 150])
+	
+	for(var i = 0; i < 3; i ++){
+		var cname = document.getElementById("car" + i);
+		cname.textContent = '자동차 이름 : ' + car[i];
+	}
+	
+</script>
+</body>
+</html>
+
+
+<!-- textContent : 웹문서 안에서 아이디를 찾아서 변수방에 부여한 후 변수의 내용을 출력
+단 선언된 아이디 순서대로 호출됨 	-->
+
+

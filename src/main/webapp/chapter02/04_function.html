@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>function</title>
+</head>
+<body>
+	<script>
+		function printMsg(msg) {
+			document.write("기명 함수 : <b>" + msg + "</b><br>");
+		}
+		var printMsg = function(msg){
+			document.write("무명 함수 : <b>" + msg + "</b><br>")
+		}
+		printMsg("호출되었습니다");
+		// 무명 함수가 기명 함수보다 먼저 호출된다.
+	</script>
+</body>
+</html>

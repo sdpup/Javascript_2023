@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Soldesk Car</title>
+</head>
+<body>
+<p>[Hong's Car]</p>
+<p id="hong1"></p>
+<p id="hong2"></p>
+<p id="hong3"></p>
+<p>[Kim's Car]</p>
+<p id="data1"></p>
+<p id="data2"></p>
+<p id="data3"></p>
+<p id="data4"></p>
+
+
+<script>
+	function Car(name, color, speed) {
+			this.name=name;
+			this.color=color;
+			this.speed=speed;
+			this.speedup=function(){
+				return this.speed+10;
+			};
+			this.speeddown=function(){
+				return this.speed-10;
+			};
+	}
+	
+	var Hongcar = new Car('Sonata', 'blue', 100);
+	var Kimcar = new Car('Jeep', 'red', 120);
+	
+	//속성 추가 삭제
+	Kimcar.price = '4천만원';
+	delete Kimcar.color;
+	
+	var cname = document.getElementById("hong1");
+	cname.textContent = '자동차 이름 : ' + Hongcar.name;
+	var carcolor = document.getElementById("hong2");
+	carcolor.textContent = '자동차 색상 : ' + Hongcar.color;
+	var carspeed = document.getElementById("hong3");
+	carspeed.textContent = '자동차 속도 : ' + Hongcar.speedup();
+	
+	var cname = document.getElementById("data1");
+	cname.textContent = '자동차 이름 : ' + Kimcar.name;
+	var carcolor = document.getElementById("data2");
+	carcolor.textContent = '자동차 색상 : ' + Kimcar.color; // 삭제된 속성
+	var carspeed = document.getElementById("data3");
+	carspeed.textContent = '자동차 속도 : ' + Kimcar.speedup();
+	var carprice = document.getElementById("data4");
+	carprice.textContent = '자동차 가격 : ' + Kimcar.price; // 추가된 속성
+	
+</script>
+</body>
+</html>
+
+
+<!-- textContent : 웹문서 안에서 아이디를 찾아서 변수방에 부여한 후 변수의 내용을 출력
+단 선언된 아이디 순서대로 호출됨 	-->
+
+
+

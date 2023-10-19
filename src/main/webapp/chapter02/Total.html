@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>설문조사</title>
+</head>
+<body>
+	<script>
+		var list=[
+    		       {question : "이 중에서 제일 좋아하는 과일을 선택하세요",
+    		       options:["사과","복숭아","포도","바나나","딸기"] },
+    		       
+    		       {question: "이 중에서 제일 좋아하는 음식을 선택해주세요",
+					options:["떡볶이","짜장면","파스타","찌게","치킨"]},
+					
+    		       {question: "이 중에서 제일 좋아하는 반려동물을 선택해주세요",
+					options:["강아지","고양이","토끼","새","여우"]}
+					];
+		console.log(list);
+		
+		for(var i = 0; i < list.length; i ++){
+			var questionMessage = list[i].question + '\n';
+			for(var j = 0; j < list[i].options.length; j ++){
+				questionMessage += (j+1) + '.' + list[i].options[j] + '\n';
+			}
+			console.log(questionMessage);
+			list[i].answer = prompt(questionMessage); //설문답
+		}
+		for(var i = 0; i < list.length; i ++){
+			var index = parseInt(list[i].answer); //가공된 (j+1) index -1
+			var message = list[i].question + '/n당신의 선택 : ' + list[i].options[index-1];
+			alert(message) //설문결과
+		}
+		
+	</script>
+</body>
+</html>
